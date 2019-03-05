@@ -1,0 +1,20 @@
+<h1>This is a Showpage </h1>
+
+<h2>
+	<%= @task[:title] %>
+</h2>
+
+<p>
+	<%= @task[:details] %>
+</p>
+
+<p>
+<!--   <p><%= @task[:completed]  %></p>	 -->
+	<% if @task[:completed] == true%>
+		<i class="fas fa-check-circle"></i>
+	<% else %>
+		<i class="far fa-circle"></i>
+	<% end  %>
+</p>
+
+<%= link_to "Back to Index", tasks_path %>

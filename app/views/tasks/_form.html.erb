@@ -1,0 +1,23 @@
+
+<!-- app/views/tasks/_form.html.erb --> 
+
+<%= form_for(@task) do |f| %> 
+	<div class="form">
+		<div>
+			<%= f.label :title %> 
+			<%= f.text_field :title %> 
+		</div>
+		<div>
+			<%= f.label :details %> 
+			<%= f.text_field :details %> 	
+		</div>
+		<div>
+			<input type="checkbox" name="completed" value="true">
+			<%= f.label :completed %> 
+		</div>
+
+		<%= f.submit %>
+	</div>
+<% end %> 
+
+<!-- .element: class="view" -->

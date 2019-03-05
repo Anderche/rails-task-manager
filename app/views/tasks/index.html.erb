@@ -1,0 +1,20 @@
+
+<!-- FILE: index.html.erb -->
+<!-- DO NOT NEED ERB FOR PLAIN HEADERS...ex: -->
+<h1> My Tasks </h1>
+
+<%= link_to "Create New Task", tasks_new_path, class: 'btn btn-primary' %>
+
+<ul>
+<% @tasks.each do |task| %>
+  	<li>
+  		<!-- prefix is before _path; ??? how know to pass task ??? -->
+			<%= link_to task[:title], task_path(task.id) %> <br>
+			<%= link_to "EDIT Task", edit_task_path(task.id) %> <br>
+			<%= link_to "DELETE", task_path(task),
+			      method: :delete,
+			      data: { confirm: "Are you sure?" } %> <br>
+			-----------
+  	</li>
+<% end %>
+</ul>
